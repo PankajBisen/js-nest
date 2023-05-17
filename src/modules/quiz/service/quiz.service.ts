@@ -14,11 +14,14 @@ export class QuizeService {
         return [1, 2, 3];
     };
 
-    async getQuizById(id: number): Promise<Quiz>{
-        const quizId: FindOneOptions<Quiz> = { where: { id } };
+    async getQuizById(id: number): Promise<Quiz> {
+        const quizId: FindOneOptions<Quiz> = {
+            where: { id },
+            relations: ['questions']
+        };
         return await this.quizRepository.findOne(quizId);
     }
-    
+
 
     async createNewQuiz(quiz: CreateQuizeDto) {
         return await this.quizRepository.save(quiz);

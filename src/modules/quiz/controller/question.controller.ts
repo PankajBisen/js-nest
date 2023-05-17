@@ -7,8 +7,8 @@ import { QuizeService } from "../service/quiz.service";
 @Controller('question')
 export class QuestionController {
     constructor(
-        private  questionService: QuestionService,
-        private  quizService: QuizeService){}
+        private readonly questionService: QuestionService,
+        private readonly quizService: QuizeService){}
 
     @Post('')   
     @UsePipes(ValidationPipe)
