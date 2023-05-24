@@ -2,7 +2,9 @@ import { Body, Controller, Post, UsePipes, ValidationPipe } from "@nestjs/common
 import { OptionService } from "../service/option.service";
 import { CreateOptionDto } from "../dto/creare-option.dto";
 import { QuestionService } from "../service/question.service";
+import { ApiTags } from "@nestjs/swagger";
 
+@ApiTags('Options')
 @Controller('question/option')
 export class OptionController {
     constructor(
